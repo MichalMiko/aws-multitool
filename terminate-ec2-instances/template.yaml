@@ -5,14 +5,14 @@ Resources:
       Properties:
         Handler: ec2-terminator.handler
         Role: !GetAtt LambdaExecutionRole.Arn
-        Code:
-          ZipFile: !Sub |
-            var response = require('cfn-response');
-            exports.handler = function(event, context) {
-              var responseData = {Value: event.ResourceProperties.List};
-              responseData.Value.push(event.ResourceProperties.AppendedItem);
-              response.send(event, context, response.SUCCESS, responseData);
-            };
+        Code: ./lambda
+          # ZipFile: !Sub |
+          #   var response = require('cfn-response');
+          #   exports.handler = function(event, context) {
+          #     var responseData = {Value: event.ResourceProperties.List};
+          #     responseData.Value.push(event.ResourceProperties.AppendedItem);
+          #     response.send(event, context, response.SUCCESS, responseData);
+          #   };
         Runtime: python3.7
   LambdaExecutionRole:
       Type: AWS::IAM::Role
