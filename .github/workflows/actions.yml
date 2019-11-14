@@ -46,8 +46,9 @@ jobs:
         aws-access-key-id: ${{ secrets.aws_access_key }}
         aws-secret-access-key: ${{ secrets.aws_secret_key }}
         aws-region: eu-central-1
-        
-# aws cloudformation deploy --template-file /path_to_template/template.json --stack-name my-new-stack --parameter-overrides Key1=Value1 Key2=Value2 --tags Key1=Value1 Key2=Value2      
+      run:
+        aws cloudformation list-stacks
+        #aws cloudformation deploy --template-file /path_to_template/template.json --stack-name my-new-stack --parameter-overrides Key1=Value1 Key2=Value2 --tags Key1=Value1 Key2=Value2      
 #     - name: Login to Amazon ECR
 #       id: login-ecr
 #       uses: aws-actions/amazon-ecr-login@v1
