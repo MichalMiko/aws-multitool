@@ -49,9 +49,9 @@ jobs:
 
     - name: Build, tag, and push image to Amazon ECR
       run:
-        ls
-        pwd
-        aws cloudformation deploy --template-file ./terminate-ec2-instances/template.yaml --stack-name my-new-stack
+        - ls
+        - pwd
+        - aws cloudformation deploy --template-file ./terminate-ec2-instances/template.yaml --stack-name my-new-stack
         # aws cloudformation deploy --template-file /path_to_template/template.json --stack-name my-new-stack --parameter-overrides Key1=Value1 Key2=Value2 --tags Key1=Value1 Key2=Value2      
 #     - name: Login to Amazon ECR
 #       id: login-ecr
