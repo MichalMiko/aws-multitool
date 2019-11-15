@@ -22,7 +22,7 @@ jobs:
         aws-region: eu-central-1
 
     - name: Validate templae
-      run: aws cloudformation validate-template --template-body ./terminate-ec2-instances/template.yaml
+      run: aws cloudformation validate-template --template-body file://terminate-ec2-instances/template.yaml
     
     - name: Deploy
       env: 
