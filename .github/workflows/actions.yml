@@ -12,7 +12,8 @@ jobs:
 
     steps:
     - name: Install AWS SAM
-      run: sudo apt-get install aws-sam-cli
+      run: pip install --user aws-sam-cli #sudo apt-get install aws-sam-cli
+
     - name: Checkout
       uses: actions/checkout@v1
 
