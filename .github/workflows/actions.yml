@@ -13,7 +13,8 @@ jobs:
     steps:
     - name: Install AWS SAM
       run: |
-        pip3 install --user --upgrade setuptools && pip3 install --user wheel && pip3 install --user aws-sam-cli  #sudo apt-get install aws-sam-cli
+#        pip3 install --user --upgrade setuptools && pip3 install --user wheel && pip3 install --user aws-sam-cli  #sudo apt-get install aws-sam-cli
+        pip3 install --upgrade setuptools && pip3 install wheel && pip3 install aws-sam-cli  #sudo apt-get install aws-sam-cli
         pip3 show aws-sam-cli
         sam --version
 #    - name: Install AWS SAM
