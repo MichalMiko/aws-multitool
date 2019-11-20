@@ -11,6 +11,8 @@ jobs:
     runs-on: ubuntu-latest
 
     steps:
+    - name: Install AWS SAM
+      run: sudo apt-get install aws-sam-cli
     - name: Checkout
       uses: actions/checkout@v1
 
@@ -28,7 +30,7 @@ jobs:
       env: 
         TAG: ${{ github.sha }}
       run: |
-        aws cloudformation deploy --template-file ./terminate-ec2-instances/template.yaml --capabilities CAPABILITY_NAMED_IAM --stack-name my-stack
+        # aws cloudformation deploy --template-file ./terminate-ec2-instances/template.yaml --capabilities CAPABILITY_NAMED_IAM --stack-name my-stack
         # aws cloudformation deploy --template-file ./terminate-ec2-instances/template.yaml --capabilities CAPABILITY_NAMED_IAM --stack-name stack-$TAG
         # aws cloudformation deploy --template-file /path_to_template/template.json --stack-name my-new-stack --parameter-overrides Key1=Value1 Key2=Value2 --tags Key1=Value1 Key2=Value2      
 #     - name: Login to Amazon ECR
