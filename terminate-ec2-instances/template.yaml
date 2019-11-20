@@ -1,5 +1,16 @@
 AWSTemplateFormatVersion: '2010-09-09'
+Transform: AWS::Serverless-2016-10-31
 Resources:
+  SourceBucket:
+    Type: AWS::S3::Bucket
+      Properties:
+        BucketName: !Sub 'SourceBucket-${AWS::Region}-${AWS::AccountId}'
+        BucketEncryption:
+          ServerSideEncryptionConfiguration:
+            - ServerSideEncryptionByDefault:
+                SSEAlgorithm: AES256
+      DeletionPolicy: Delete
+
   DeleteEc2Instances:
       Type: AWS::Lambda::Function
       Properties:
