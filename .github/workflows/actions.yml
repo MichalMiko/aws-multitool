@@ -14,7 +14,7 @@ jobs:
     - name: Install AWS SAM
       run: |
         pip3 install --upgrade --user setuptools && pip3 install wheel --user && pip3 install aws-sam-cli --user  #sudo apt-get install aws-sam-cli
-        sudo apt install find
+        sudo apt-get install find
         find . -name sam
         # export PATH=$PATH:/home/runner/.local/lib/python3.6/site-packages
         # sam --version
