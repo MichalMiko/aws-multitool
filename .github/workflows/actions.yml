@@ -15,8 +15,7 @@ jobs:
       run: |
         pip3 install --upgrade setuptools && pip3 install wheel && pip3 install aws-sam-cli  #sudo apt-get install aws-sam-cli
         pip3 show aws-sam-cli
-        ls $(which python3)
-        ls $(which pip3)
+        ls /usr/bin/
         echo $PATH
         export PATH=$PATH:/home/runner/.local/lib/python3.6/site-packages
         echo $PATH
