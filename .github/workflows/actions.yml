@@ -16,7 +16,7 @@ jobs:
         python -m pip install --upgrade pip
         pip install aws-sam-cli
         echo $PATH
-        export PATH=$PATH:/usr/lib/python2.7/dist-packages
+        export PATH=$PATH:/home/runner/.local/bin
         echo $PATH
         sam --version
         # which pip
