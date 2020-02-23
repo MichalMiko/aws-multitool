@@ -13,9 +13,11 @@ jobs:
     steps:
     - name: Install AWS SAM
       run: |
-        which pip
-        which pip3
+        python -m pip install --upgrade pip
         pip install aws-sam-cli
+        # which pip
+        # which pip3
+        # pip install aws-sam-cli
         # pip3 install --upgrade --user setuptools && pip3 install wheel --user && pip3 install aws-sam-cli --user  #sudo apt-get install aws-sam-cli
         # sudo apt-get install fd-find
         # fd sam /
